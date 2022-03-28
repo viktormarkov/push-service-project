@@ -1,0 +1,32 @@
+<div>
+  <h1><%= t('.title') %></h1>
+  <%= link_to t('.new_user'), new_user_path, class: 'btn btn-primary vertical-margin', method: 'get' %>
+  <div class='vertical-margin'>
+    <table class='col-sm-12'>
+      <tr>
+        <th class='col-sm-3'><%= t('activerecord.attributes.user.email') %></th>
+        <th class='col-sm-2'><%= t('activerecord.attributes.user.role') %></th>
+        <th class='col-sm-3'><%= t('activerecord.attributes.user.city') %></th>
+        <th class='col-sm-2'></th>
+        <th class='col-sm-2'></th>
+      </tr>
+      <% @users.each do |user| %>
+        <tr>
+          <td class='col-sm-3'><%= user.email %></td>
+          <td class='col-sm-2'><%= t("roles.#{user.role}") %></td>
+          <td class='col-sm-3'><%= t("cities.#{user.city}") unless user.admin? %></td>
+          <td class='col-sm-2'>
+            <%= link_to t('common.edit'), edit_user_path(user), method: 'get' %>
+          </td>
+          <td class='col-sm-2'>
+            <% if can? :destroy, user -%>
+              <%= link_to t('common.delete'), user_path(user), method: 'delete', 
+              data: { confirm: t('.delete_confirm') } %>
+            <% end -%>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+  
+</div>

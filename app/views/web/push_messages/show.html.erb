@@ -1,0 +1,32 @@
+<div>
+  <h1>Сообщение</h1>
+  <div class='vertical-margin'>
+    <h6><%= t('activerecord.attributes.push_message.id') %></h6>
+    <div><%= @message.id %></div>
+  </div>
+  <div class='vertical-margin'>
+    <h6><%= t('activerecord.attributes.push_message.status') %></h6>
+    <div><%= t("statuses.push_message.#{@message.status}") %></div>
+  </div>
+  <div class='vertical-margin'>
+    <h6><%= t('activerecord.attributes.push_message.title') %></h6>
+    <div><%= @message.title %></div>
+  </div>
+  <div class='vertical-margin'>
+    <h6><%= t('activerecord.attributes.push_message.body') %></h6>
+    <div><%= @message.body %></div>
+  </div>
+  <div class='vertical-margin'>
+    <h6><%= t('activerecord.attributes.push_message.city') %></h6>
+    <div><%= t("cities.#{@message.city}") %></div>
+  </div>
+  <div class='vertical-margin'>
+    <h6><%= t('activerecord.attributes.push_message.created_at') %></h6>
+    <div><%= l(@message.created_at, format: :default) %></div>
+  </div>
+  <div class='vertical-margin'>
+    <h6><%= t('activerecord.attributes.push_message.creator') %></h6>
+    <div><%= @message.creator.email %></div>
+  </div>
+  <%= link_to t('common.back'), push_messages_path, class: 'btn btn-secondary extra-vertical-margin' %>
+</div>

@@ -1,0 +1,7 @@
+en:
+  statuses:
+    push_message:
+      waiting: Waiting for sending
+      failed: Not sent
+      partially_sent: Partially sent
+      successfull: Sent

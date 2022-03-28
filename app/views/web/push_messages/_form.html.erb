@@ -1,0 +1,20 @@
+<%= form_with model: message, class: 'vertical-margin' do |form| %>
+  <div class="actions">
+    <div class='vertical-margin'>
+      <%= form.label :title, t('activerecord.attributes.push_message.title'), class: 'form-label' %>
+      <%= form.text_field :title, class: 'form-control', maxlength: Constants::Validations::MAX_TITLE_SIZE, required: true, autocomplete: "off" %>
+    </div>
+    <div class='vertical-margin'>
+      <%= form.label :body, t('activerecord.attributes.push_message.body'), class: 'form-label' %>
+      <%= form.text_area :body, class: 'form-control', maxlength: Constants::Validations::MAX_BODY_SIZE, required: true, autocomplete: "off" %>
+    </div>
+    <div class='vertical-margin city-block'>
+      <%= form.label :city, t('activerecord.attributes.push_message.city'), class: 'form-label' %>
+      <%= form.select :city, cities_for_select, { selected: default_city }, { class: 'form-select' } %>
+    </div>
+    <div class='extra-vertical-margin'>
+      <%= link_to t('common.cancel'), push_messages_path, class: 'btn btn-secondary' %>
+      <%= form.submit t('common.send'), class: 'btn btn-primary'  %>
+    </div>
+  </div>
+<% end %>

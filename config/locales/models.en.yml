@@ -1,0 +1,5 @@
+en:
+  models:
+    device_token: Token
+    user: User
+    push_message: Message

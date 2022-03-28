@@ -1,0 +1,35 @@
+en:
+  activerecord:
+    models:
+      device_token:
+        one: Token
+        few: Tokens
+        many: Tokens
+        other: Tokens
+      user:
+        one: User
+        few: Users
+        many: Users
+        other: Users
+      push_message:
+        one: Message
+        few: Messages
+        many: Messages
+        other: Messages
+    attributes:
+      device_token:
+        value: Value
+        city: City
+      user:
+        role: Role
+        city: City
+        email: Email
+        password: Password  
+      push_message:
+        id: id
+        title: Title
+        body: Body
+        city: City
+        creator: Creator
+        status: Status
+        created_at: Sending date

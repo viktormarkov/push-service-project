@@ -1,0 +1,27 @@
+<div>
+  <h1><%= t('models.push_message') %></h1>
+  <%= link_to t('.new_message'), new_push_message_path, class: 'btn btn-primary vertical-margin', method: 'get' %>
+  <div class='vertical-margin'>
+    <table class='col-sm-12'>
+      <tr>
+        <th class='col-sm-4'><%= t('activerecord.attributes.push_message.title') %></th>
+        <th class='col-sm-2'><%= t('activerecord.attributes.push_message.city') %></th>
+        <th class='col-sm-2'><%= t('activerecord.attributes.push_message.created_at') %></th>
+        <th class='col-sm-2'><%= t('activerecord.attributes.push_message.status') %></th>
+        <th class='col-sm-2'></th>
+      </tr>
+      <% @messages.each do |message| %>
+        <tr>
+          <td class='col-sm-4'><%= message.title %></td>
+          <td class='col-sm-2'><%= t("cities.#{message.city}") %></td>
+          <td class='col-sm-2'><%= l(message.created_at, format: :short) %></td>
+          <td class='col-sm-2'><%= t("statuses.push_message.#{message.status}") %></td>
+          <td class='col-sm-2'>
+            <%= link_to t('common.more_details'), push_message_path(message), method: 'get' %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+  
+</div>

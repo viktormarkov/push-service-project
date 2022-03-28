@@ -1,0 +1,26 @@
+<%= javascript_pack_tag 'users/form' %>
+
+<%= form_with model: user, class: 'vertical-margin' do |form| %>
+  <div class="actions">
+    <div class='vertical-margin'>
+      <%= form.label :email, t('activerecord.attributes.user.email'), class: 'form-label' %>
+      <%= form.email_field :email, class: 'form-control', value: user.email, autocomplete: "off" %>
+    </div>
+    <div class='vertical-margin'>
+      <%= form.label :password, t('activerecord.attributes.user.password'), class: 'form-label' %>
+      <%= form.password_field :password, class: 'form-control', autocomplete: "new-password", maxlength: Constants::Validations::MAX_PASSWORD_SIZE, minlength: Constants::Validations::MIN_PASSWORD_SIZE %>
+    </div>
+    <div class='vertical-margin'>
+      <%= form.label :role, t('activerecord.attributes.user.role'), class: 'form-label' %>
+      <%= form.select :role, roles_for_select, { selected: user.role || default_role }, { class: 'form-select' } %>
+    </div>
+    <div class='vertical-margin city-block'>
+      <%= form.label :city, t('activerecord.attributes.user.city'), class: 'form-label' %>
+      <%= form.select :city, cities_for_select, { selected: user.city || default_city }, { class: 'form-select' } %>
+    </div>
+    <div class='extra-vertical-margin'>
+      <%= link_to t('common.cancel'), users_path, class: 'btn btn-secondary' %>
+      <%= form.submit t('common.save'), class: 'btn btn-primary'  %>
+    </div>
+  </div>
+<% end %>

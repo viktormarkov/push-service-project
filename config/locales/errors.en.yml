@@ -1,0 +1,36 @@
+# https://github.com/dry-rb/dry-schema/blob/master/config/errors.yml
+en:
+  validation:
+    errors: 
+      filled?: Cannot be empty
+      key?: Cannot be empty
+      int?: Cannot be empty
+      rules:
+        email:
+          invalid_format: Invalid format
+        password:
+          min: "Cannot be less than %{min_value} symbols"
+          max: "Cannot be more than %{max_value} symbols"
+        city:
+          invalid: Invalid value
+        role:
+          invalid: Invalid value
+        title:
+          max: "Cannot be more than %{max_value} symbols"
+        body:
+          max: "Cannot be more than %{max_value} symbols"
+  custom:
+    errors:
+      keys:
+        id: id
+        email: Email
+        push_message: Message
+        password: Password
+        city: City
+        role: Role
+        title: Title
+        body: Body
+        user: User
+      messages:
+        is_not_uniq: Already exists
+        cant_find_user: Unknown user

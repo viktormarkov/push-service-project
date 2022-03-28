@@ -1,0 +1,13 @@
+<nav class="navbar navbar-expand-sm navbar-light bg-light horizontal-padding vertical-padding">
+  <%= link_to t('common.app_name'), root_path, class: 'navbar-brand' %>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <%= link_to t('.push_messages'), push_messages_path, class: 'nav-item nav-link' %>
+      <%= link_to t('.users'), users_path, class: 'nav-item nav-link' if can? :manage, User %>
+      <%= link_to t('.logout'), destroy_user_session_path, method: :delete, class: 'nav-item nav-link' %>
+    </div>
+  </div>
+</nav>

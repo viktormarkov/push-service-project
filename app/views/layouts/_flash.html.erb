@@ -1,0 +1,5 @@
+<% flash.each do |type, msg| %>
+  <div class="horizontal-margin vertical-margin alert <%= flash_class(type) %>">
+    <%= msg %>
+  </div>
+<% end %>

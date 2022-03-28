@@ -1,0 +1,37 @@
+en:
+  layouts:
+    navbar:
+      push_messages: Messages
+      users: Users
+      logout: Log out
+  web:
+    push_messages:
+      index: 
+        new_message: + New message
+      new:
+        title: New message
+      create:
+        success: Message has been sent!    
+    users:
+      index:
+        title: Users
+        new_user: + New user
+        delete_confirm: 'Delete?'
+      new: 
+        title: New user
+      edit:
+        title: Edit user
+      create:
+        success: User has been created!
+      update:
+        success: User has been updated!
+      destroy:
+        success: User has been destroyed!
+  devise:
+    sessions:
+      new:
+        title: Login
+        log_in: Log in 
+
+
+
